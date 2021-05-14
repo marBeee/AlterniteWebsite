@@ -1,0 +1,157 @@
+
+			:root {
+                /* background-color: black; */
+				font-size: 16px;
+				--disabled: rgba(183, 188, 196);
+				--blue: rgb(173, 207, 255);
+                --bblue: rgb(72, 162, 235);
+                line-height: 1.5;
+                scroll-behavior: smooth;
+			}
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+					Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+				height: 100vh;
+				margin: 0;
+				padding: 0;
+				color: rgb(80, 80, 80);
+                counter-reset: section;
+			}
+
+            .coverphoto {
+                /* The image used */
+                background-image: url("https://lh3.googleusercontent.com/pw/ACtC-3cDlLtFuXs8b0i9Rg2P2SYbVBGPks7HCzlXCEHExnVK8k9whqNXgODCcEWnvGe581bNGFgCsAB1ntiN4XfK0XMCnYWyel7HhvNTNytNsxW--k3wLHBrIF0FddIWKDABuiZHqVOuNnGN0PborRW0BlI=w800-h394-no?authuser=0");
+
+                /* Set a specific height */
+                height: 85%;
+
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position:50%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                display:flex;
+                flex-direction: column-reverse;
+                padding:0ch;
+                }
+            .coverphoto_top{
+                width :100%;
+                display: table-cell;
+                display:flex;
+            }
+			.flex {
+                background-image: url("https://lh3.googleusercontent.com/pw/ACtC-3dErzsYKU3iTE3GAjxhJasR74CbctmfOmuwudfnd0VH21BvkMDMNuPI_QdHx3ON9ZuIWbvYXMlA8Mzttgao_lCS2t4JUD4dz1yTuQ3Y9XRawcuifysPuTycv369OpYBXOSRYrJz5Byw8KvbyZpELSw=w1151-h280-no?authuser=0");
+                background-repeat: no-repeat;
+                background-size: contain;
+				display: flex;
+                flex-direction:column;
+                height: 100%;
+                background-color: grey;
+			}
+
+			.sidebar {
+				background: rgba(246, 247, 250);
+				flex: 1;
+				/* height: 100%; */
+                min-width: 250px;
+                background: black;
+			}
+
+			.main {
+				flex: 5;
+				height: 100%;
+			}
+
+            
+        
+
+            .menu {
+                display: flex;
+                padding: 1rem 6.5rem;
+                font-size: 1.1rem;
+            }
+
+            .title{
+                display: flex;
+                align-items: center;
+                margin:auto;
+                flex:3;
+            }
+            .link {
+                flex:1;
+                text-align: center;
+                padding: .7rem;
+                border-radius: .5rem;
+                margin: .5rem 0;
+                font-weight: 500;
+                transition: .3s ease-in-out;
+                cursor: pointer;
+            }
+
+            .link.active {
+                background: white;
+                color: darkolivegreen;
+                box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+            }
+
+            .link:hover {
+                color: var(--bblue);
+            }
+
+            .main {
+                position: relative;
+            }
+
+            .header {
+                font-weight: bolder;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                font-weight: medium;
+            }
+
+            .header::before {
+                content: counter(section);
+                counter-increment: section;
+                margin-right: 1rem;
+                color: var(--bblue);
+            }
+
+            .section.active {
+                opacity: 1;
+                animation: in .4s ease-in-out forwards;
+            }
+            .desc{
+                font-weight: bold;
+            }
+            .section {
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                color: black;
+                opacity: 0;
+                position: absolute;
+                left: 0;
+                background-color: rgba(255, 255, 255, 0.9);
+                height: auto;
+                padding: 30px;
+                margin: 7% 10%;
+                /* color: white; */
+            }
+
+            @keyframes in {
+                0% {
+                    opacity: 0;
+                    top: -10%;
+                }
+
+                100% {
+                    top: 0;
+                    opacity: 1;
+                }
+            }
+            a {
+                text-decoration: none;
+                color:white;
+            }
